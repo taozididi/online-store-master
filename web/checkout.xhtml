@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Basket</title>
+        <link rel="stylesheet" type="text/css" href="css/checkout.css"/>
+    </h:head>
+    <h:body>
+        <h:form></h:form>
+        <header>
+            <a class="link" style="background-color: white;">C and C</a>
+            <h:link class="link" outcome="/shop.xhtml">Shop</h:link>
+            <a class="link" href="">Boxes</a>
+            <a class="link" href="">Contact</a>
+            <h:link id="numberOfItems" class="link" style="background-color: rgba(0, 0, 0, 0.06);" outcome="/basket.xhtml" value="#{orderController.basket.numberOfItems} items"></h:link>
+        </header>
+        <h:form>
+            <section class="part">
+                <h3 class="half">FIRST NAME*</h3>
+                <h3 class="half">LAST NAME*</h3>
+                <h:inputText class="half" value="#{orderController.firstName}"/>
+                <h:inputText class="half" value="#{orderController.lastName}"/>
+                <h3>ADDRESS*</h3>
+                <h:inputText value="#{orderController.address}"/>
+                <h3>ADDRESS2</h3>
+                <h:inputText value="#{orderController.address2}"/>
+            </section>
+            <section class="part">
+                <h3 class="half">CITY*</h3>
+                <h3 class="half">POSTCODE*</h3>
+                <h:inputText class="half" value="#{orderController.city}"/>
+                <h:inputText class="half" value="#{orderController.postcode}"/>
+                <h3>PHONE*</h3>
+                <h:inputText value="#{orderController.phone}"/>
+                <h3>EMAIL</h3>
+                <h:inputText value="#{orderController.email}"/>
+            </section>
+
+            <h:link class="choise" outcome="/basket.xhtml" value="Basket"></h:link>
+            <h:link class="choise" outcome="/shop.xhtml" value="Back to shop"></h:link>
+            <h:commandLink class="choise" action="#{orderController.makeOrder()}" value="Confirm"></h:commandLink>
+        </h:form>
+    </h:body>
+</html>

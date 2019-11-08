@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Shop</title>
+        <link rel="stylesheet" type="text/css" href="css/shop.css"/>
+    </h:head>
+    <h:body>
+        <h:form></h:form>
+        <header>
+            <a class="link" style="background-color: white;">C and C</a>
+            <h:link class="link" outcome="/shop.xhtml">Shop</h:link>
+            <a class="link">Boxes</a>
+            <a class="link">Contact</a>
+            <h:link id="numberOfItems" class="link" style="background-color: rgba(0, 0, 0, 0.06);" outcome="/basket.xhtml" value="#{orderController.basket.numberOfItems} items"></h:link>
+        </header>
+        <c:forEach items="#{productController.getItemsByCategory(1)}" var="product">
+            <section class="product">
+                <img src="images/products/#{product.sign}.JPG"/>
+                <section class="above">
+                    <h2>#{product.name.toUpperCase()}</h2>
+
+                    <h3>₴#{product.price}</h3>
+
+                    <h3>#{product.description}</h3>
+                    <p:commandLink class="button" actionListener="#{orderController.basket.addItem(product)}" update="numberOfItems, #{product.sign}" value="+"/>
+                    <p:outputLabel class="count" id="#{product.sign}" value="#{orderController.basket.counts[product.id]}"/>
+                    <p:commandLink class="button" actionListener="#{orderController.basket.deductItem(product)}" update="numberOfItems, #{product.sign}" value="-"/>
+                </section>
+            </section>
+        </c:forEach>
+    </h:body>
+</html>

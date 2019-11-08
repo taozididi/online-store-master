@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Basket</title>
+        <link rel="stylesheet" type="text/css" href="css/basket.css"/>
+    </h:head>
+    <h:body>
+        <h:form></h:form>
+        <header>
+            <a class="link" style="background-color: white;">C and C</a>
+            <h:link class="link" outcome="/shop.xhtml">Shop</h:link>
+            <a class="link" href="">Boxes</a>
+            <a class="link" href="">Contact</a>
+            <h:link id="numberOfItems" class="link" style="background-color: rgba(0, 0, 0, 0.06);" value="#{orderController.basket.numberOfItems} items"></h:link>
+        </header>
+        <section class="total">
+            <h1>Your total amount</h1>
+            <h:outputLabel id="total"><h1>₴#{orderController.basket.total}</h1></h:outputLabel>
+        </section>
+        <c:forEach items="#{orderController.basket.items}" var="product">
+            <section class="product">
+                <img src="images/products/#{product.sign}.JPG"/>
+                <section class="above">
+                    <h2>#{product.name.toUpperCase()}</h2>
+
+                    <h3>₴#{product.price}</h3>
+
+                    <h3>#{product.description}</h3>
+                    <p:commandLink class="button" actionListener="#{orderController.basket.addItem(product)}" update="total, #{product.sign}" value="+"/>
+                    <p:outputLabel class="count" id="#{product.sign}" value="#{orderController.basket.counts[product.id]}"/>
+                    <p:commandLink class="button" actionListener="#{orderController.basket.deductItem(product)}" update="total, #{product.sign}" value="-"/>
+                </section>
+            </section>
+        </c:forEach>
+        <h:link class="choise" outcome="/shop.xhtml" value="Back to shop"></h:link>
+        <h:link class="choise" outcome="/checkout.xhtml" value="Continue"></h:link>
+    </h:body>
+</html>

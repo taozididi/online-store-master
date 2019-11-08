@@ -1,0 +1,376 @@
+/*
+General settings
+*/
+
+html, body{ height: 100%;}
+
+body{
+    animation-name: fadeout;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+h2{
+    font-size: 15px;
+    font-size: 1.5vw;
+}
+h3{
+    font-size: 10px;
+    font-size: 1vw;
+}
+
+/*
+Header
+*/
+
+header{
+    width: 100%;
+    height: 30px;
+    height: 3vw;
+}
+
+header a{
+    display: inline-block;
+    float: left;
+    text-decoration: none;
+    width: 20%;
+    height: 100%;
+    padding-top: 7.5px;
+    padding-top: 0.75vw;
+    font-size: 15px;
+    font-size: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.03);
+    color: rgba(0, 0, 0, 0.12);
+    transition-duration: 0.6s;
+    -webkit-transition-duration: 0.6s;
+}
+
+header a:hover{
+    color: rgba(0, 0, 0, 0.33);
+}
+
+h1{
+    display: block;
+    font-size: 30px;
+    font-size: 3vw;
+    color: rgba(0, 0, 0, 0.23);
+}
+
+/*
+Before products
+*/
+
+/*
+After products
+*/
+
+.choise{
+    display: inline-block;
+    float: left;
+    width: 50%;
+    margin: 30px 0 30px 0;
+    margin: 3vw 0 3vw 0;
+    font-size: 30px;
+    font-size: 3vw;
+    color: lightgray;
+    transition-duration: 0.6s;
+    -webkit-transition-duration: 0.6s;
+}
+
+.choise:hover{
+    color: darkgray;
+}
+
+/*
+Product row
+*/
+
+.product{
+    display: inline-block;
+    float: left;
+    width: 20%;
+    height: 150px;
+    height: 15vw;
+    overflow: hidden;
+    transition-duration: 0.33s;
+    -webkit-transition-duration: 0.33s;
+}
+
+.product img{
+    display: inline-block;
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+.product .above{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: -100%;
+    opacity: 0;
+    background-color: black;
+    color: white;
+    transition-duration: 0.6s;
+    -webkit-transition-duration: 0.6s;
+}
+
+.product .above:hover{
+    opacity: 0.7;
+}
+
+.product .above .button,.product .above .count{
+    display: inline-block;
+    float: left;
+    width: 33.333%;
+    height: 30px;
+    height: 3vw;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-size: 15px;
+    font-size: 1.5vw;
+    transition-duration: 0.33s;
+    -webkit-transition-duration: 0.33s;
+}
+
+.product .above .button:hover{
+    color: #777777;
+}
+
+/*
+Footer
+*/
+
+footer section{
+    display: inline-block;
+    float: left;
+    width: 33.333%;
+    height: 330px;
+    height: 33vw;
+}
+
+footer h2, h5{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    font-size: 1.5vw;
+}
+
+footer h3{
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 10px;
+    font-size: 1vw;
+}
+
+h5{
+    display: inline-block;
+    float: left;
+    width: 33%;
+}
+
+footer a{
+    opacity: 0.3;
+    color: rgba(0, 0, 0, 0.5);
+    transition-duration: 0.6s;
+    -webkit-transition-duration: 0.33s;
+}
+
+footer a:hover{
+    opacity: 1;
+}
+
+@keyframes fadeout{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+    /*
+ General settings
+ */
+
+    html, body{ height: 100%;
+        text-align: center;}
+
+    body{
+        animation-name: fadeout;
+        animation-duration: 3s;
+        animation-timing-function: ease-in;
+    }
+
+    h2{
+        font-size: 30px;
+    }
+    h3{
+        font-size: 20px;
+    }
+
+    br{
+        color: rgba(0, 0, 0, 0.3);;
+    }
+
+    /*
+    Header
+    */
+
+    header{
+        width: 100%;
+        height: 30px;
+    }
+
+    header a{
+        display: inline-block;
+        float: left;
+        text-decoration: none;
+        width: 20%;
+        height: 100%;
+        padding-top: 7.5px;
+        font-size: 15px;
+        background-color: rgba(0, 0, 0, 0.03);
+        color: rgba(0, 0, 0, 0.12);
+        transition-duration: 0.6s;
+        -webkit-transition-duration: 0.6s;
+    }
+
+    header a:hover{
+        color: rgba(0, 0, 0, 0.33);
+    }
+
+    h1{
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.23);
+    }
+
+    h2{
+        font-size: 15px;
+    }
+
+    h3{
+        font-size: 10px;
+    }
+
+    /*
+    Before products
+    */
+
+
+    /*
+    After products
+    */
+
+    .choise{
+        display: inline-block;
+        width: 100%;
+        margin: 90px 0 90px 0;
+        margin: 9vw 0 9vw 0;
+        font-size: 90px;
+        font-size: 9vw;
+        color: lightgray;
+        transition-duration: 0.6s;
+        -webkit-transition-duration: 0.6s;
+    }
+
+    /*
+    Product row
+    */
+
+    .product{
+        width: 100%;
+        height: 230px;
+        overflow: hidden;
+        transition-duration: 0.33s;
+        -webkit-transition-duration: 0.33s;
+    }
+
+    .product img{
+        display: inline-block;
+        float: left;
+        width: 100%;
+        height: 100%;
+    }
+
+    .product .above{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: -100%;
+        opacity: 0;
+        background-color: black;
+        color: white;
+        transition-duration: 0.6s;
+        -webkit-transition-duration: 0.6s;
+    }
+
+    .product .above:hover{
+        opacity: 0.7;
+    }
+
+    .product .above .button,.product .above .count{
+        display: inline-block;
+        float: left;
+        width: 33.333%;
+        height: 30px;
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+        font-size: 15px;
+        transition-duration: 0.33s;
+        -webkit-transition-duration: 0.33s;
+    }
+
+    .product .above .button:hover{
+        color: #777777;
+    }
+
+    /*
+    Footer
+    */
+
+    footer section{
+        display: block;
+        clear: both;
+        width: 100%;
+        height: auto;
+    }
+
+    footer h2, h5{
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 10px;
+    }
+
+    footer h3{
+        color: rgba(0, 0, 0, 0.3);
+        font-size: 5px;
+    }
+
+    footer a{
+        opacity: 0.3;
+        color: rgba(0, 0, 0, 0.5);
+        transition-duration: 0.6s;
+        -webkit-transition-duration: 0.33s;
+    }
+
+    footer a:hover{
+        opacity: 1;
+    }
+
+    @keyframes fadeout{
+        from{
+            opacity:0;
+        }
+        to{
+            opacity:1;
+        }
+    }
+}
